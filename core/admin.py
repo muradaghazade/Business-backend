@@ -1,3 +1,13 @@
 from django.contrib import admin
+from core.models import *
 
-# Register your models here.
+admin.site.register([
+    Client,
+    Promo_video,
+    Service,
+    Portfolio,
+    Blog,
+    Review,
+    Pricing,
+    Team_member,
+    Contact,])

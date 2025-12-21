@@ -176,102 +176,35 @@
   </div> 
       <div class="container2">
         <div class="row">
-          <div class="col-md-4">
+          {% for service in services %}
+          <div class="col-md-4 mb-4">
             <div>
               <div class="single-services">
                 <div class="card">
                   <div class="card-body">
-                    <i class="fa-solid fa-capsules  cc"></i>           
-                    <h4 class="card-title">Refreshing Design</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy eirmod tempor ividunt labor dolore magna.</p>
+                   <img width="100px" src="{{service.icon.url}}" alt="">           
+                    <h4 class="card-title">{{service.title}}</h4>
+                    <p class="card-text">{{service.description}}</p>
                   </div>  
                 </div>
               </div>
             </div>
           </div>
-
+          {% endfor %}
             <!-- AYIRE EMIL -->
           
-          <div class="col-md-4">
-            <div>
-              <div class="single-services">
-                <div class="card">
-                  <div class="card-body">
-                    <i class="fa-brands fa-bootstrap cc"></i>          
-                    <h4 class="card-title">Solid Bootstrap 5</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy eirmod tempor ividunt labor dolore magna.</p>
-                  </div>  
-                </div>
-              </div>
-            </div>
-          </div>
+         
 
             <!-- Ayir DEDIM -->
 
-          <div class="col-md-4">
-            <div>
-              <div class="single-services">
-                <div class="card">
-                  <div class="card-body">
-                    <i class="fa-brands fa-bootstrap cc"></i>       
-                    <h4 class="card-title">100+ Components</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy eirmod tempor ividunt labor dolore magna.</p>
-                  </div>  
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
          <br>
     <!-- HERE ARE CREATE COPY AND PAST FROM FIRST TO LAST YOU UNDERSTANT -->
 
 
-  <div class="container2">
-    <div class="row">
-      <div class="col-md-4">
-        <div>
-          <div class="single-services">
-            <div class="card">
-              <div class="card-body">
-                <i class="fa-solid fa-gauge cc"></i>           
-                <h4 class="card-title">Speed Optimized</h4>
-                <p class="card-text">Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy eirmod tempor ividunt labor dolore magna.</p>
-              </div>  
-            </div>
-          </div>
-        </div>
-      </div>
-        <!-- AYIRE EMIL -->     
-      <div class="col-md-4">
-        <div>
-          <div class="single-services">
-            <div class="card">
-              <div class="card-body">
-                <i class="fa-solid fa-layer-group cc"></i>       
-                <h4 class="card-title">Fully Customizable</h4>
-                <p class="card-text">Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy eirmod tempor ividunt labor dolore magna.</p>
-              </div>  
-            </div>
-          </div>
-        </div>
-      </div>
-          <!-- Ayir DEDIM -->
-      <div class="col-md-4">
-        <div>
-          <div class="single-services">
-            <div class="card">
-              <div class="card-body">
-                <i class="fa-solid fa-repeat cc"></i>       
-                <h4 class="card-title">Regular Updates</h4>
-                <p class="card-text">Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy eirmod tempor ividunt labor dolore magna.</p>
-              </div>  
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>  
+
 </div>
 <br><br>
 
@@ -288,9 +221,7 @@
     There are many variations of passages of Lorem Ipsum available,but  <br>
     the majority have suffered alteration in some form.
   </p>
-  <a href="https://youtu.be/r44RKWyfcFw?si=ZC3ubWpM5d8vCC5k" target="_blank">
-  <img class="img_N3" src="https://demo.ayroui.com/templates/business-template/assets/images/video/video-bg.png" alt="Видео" width="300">
-  </a>  
+ {{ promo_video.video|safe }} 
 </div>
 
 
@@ -543,32 +474,32 @@
 
   <div class="container-fluid yfsg">
     <div class="row">
+      {% for pricing in pricings %}
       <div class="col-md-4">
         <div>
           <div class="single-services">
             <div class="card">
               <div class="card-body">
                 <button class="button_N4">
-                  Starter 
+                  {{pricing.title}} 
                 </button>         
                 <p class="p_N4">
-                  Lorem Ipsum is simply dummy text of the <br>
-                  printing and industry.
+                  {{pricing.description}}
                 </p>
-                <h1 >$0/mo</h1>
+                <h1 >${{pricing.price}}/mo</h1>
                 <button class="button_N5">START FREE TRIAL</button>
                 <div class="div_N15"  >
                   <div class="divdiv" >
-                    <i class="fa-regular fa-circle-check samirr"></i><p class="p_N27">Cras justo odio.</p>
+                    <i class="fa-regular fa-circle-check samirr"></i><p class="p_N27">{{pricing.bio_1}}</p>
                   </div>
                   <div class="divdiv" >
-                    <i class="fa-regular fa-circle-check samirr"></i><p class="p_N27">Dapibus ac facilisis in.</p>
+                    <i class="fa-regular fa-circle-check samirr"></i><p class="p_N27">{{pricing.bio_2}}</p>
                   </div>
                   <div class="divdiv">
-                    <i class="fa-regular fa-circle-check samirr1"></i><p class="p_N27">Morbi leo risus.</p>
+                    <i class="fa-regular fa-circle-check samirr1"></i><p class="p_N27">{{pricing.bio_3}}</p>
                   </div>
                   <div class="divdiv">
-                    <i class="fa-regular fa-circle-check samirr1"></i><p class="p_N27">Excepteur sint occaecat velit.</p>
+                    <i class="fa-regular fa-circle-check samirr1"></i><p class="p_N27">{{pricing.bio_4}}</p>
                   </div>                   
                 </div>
                
@@ -577,78 +508,9 @@
           </div>
         </div>
       </div>
-
+      {% endfor %}
       
-      <div class="col-md-4">
-        <div>
-          <div class="single-services">
-            <div class="card">
-              <div class="card-body">
-                <button class="button_N5_brr">
-                   Exclusive
-                </button>         
-                <p class="p_N4">
-                  Lorem Ipsum is simply dummy text of the <br>
-                  printing and industry.
-                </p>
-                <h1>$99/mo</h1>
-                <button class="button_N5_middle_one">START FREE TRIAL</button>
-                <div class="div_N15">
 
-                  <div class="divdiv" >
-                    <i class="fa-regular fa-circle-check samirr"></i><p class="p_N27">Cras justo odio.</p>
-                  </div>
-                  <div class="divdiv" >
-                    <i class="fa-regular fa-circle-check samirr"></i><p class="p_N27">Dapibus ac facilisis in.</p>
-                  </div>
-                  <div class="divdiv">
-                    <i class="fa-regular fa-circle-check samirr"></i><p class="p_N27">Morbi leo risus.</p>
-                  </div>
-                  <div class="divdiv">
-                    <i class="fa-regular fa-circle-check samirr1"></i><p class="p_N27">Excepteur sint occaecat velit.</p>
-                  </div>     
-                </div>
-              </div>  
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div>
-          <div class="single-services">
-            <div class="card">
-              <div class="card-body">
-                <button class="button_N4">
-                  Premium
-                </button>         
-                <p class="p_N4">
-                  Lorem Ipsum is simply dummy text of the <br>
-                  printing and industry.
-                </p>
-                <h1>$150/mo</h1>
-                <button class="button_N5">START FREE TRIAL</button>
-                <div  class="div_N15">
-                  
-                  <div class="divdiv" >
-                    <i class="fa-regular fa-circle-check samirr"></i><p class="p_N27">Cras justo odio.</p>
-                  </div>
-                  <div class="divdiv" >
-                    <i class="fa-regular fa-circle-check samirr"></i><p class="p_N27">Dapibus ac facilisis in.</p>
-                  </div>
-                  <div class="divdiv">
-                    <i class="fa-regular fa-circle-check samirr"></i><p class="p_N27">Morbi leo risus.</p>
-                  </div>
-                  <div class="divdiv">
-                    <i class="fa-regular fa-circle-check samirr "></i><p class="p_N27">Excepteur sint occaecat velit.</p>
-                  </div>     
-                </div>
-               
-                
-              </div>  
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div> 
 </div>
