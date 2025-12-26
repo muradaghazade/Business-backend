@@ -10,4 +10,5 @@ admin.site.register([
     Review,
     Pricing,
     Team_member,
-    Contact,])
+    Contact,
+    Category,])

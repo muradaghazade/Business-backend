@@ -266,78 +266,20 @@
       <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="container-fluid">
           <div class="row">
+            {% for portfolio in all_portfolios %}
             <div class="col-md-4 newone">
               <div class>
-                <img  src="https://demo.ayroui.com/templates/business-template/assets/images/portfolio/pf1.jpg" alt="">        
+                <img width="400px" src="{{portfolio.image.url}}" alt="">        
                 <h3 class="h3_N1" >
-                  Graphics Design
+                  {{portfolio.title}}
                 </h3>
                 <p class="p_N7" >
-                  Short description for the ones who look for something <br>
-                  new. Awesome!
+                  {{portfolio.description}}
+                  
                 </p>
               </div>
-            </div>
-            <div class="col-md-4 newone">
-              <div>
-                <img  src="https://demo.ayroui.com/templates/business-template/assets/images/portfolio/pf2.jpg" alt="">        
-                <h3 class="h3_N1">
-                  Web Development
-                </h3>
-                <p class="p_N7"  >
-                  Short description for the ones who look for something <br>
-                  new. Awesome!
-                </p>
-              </div>
-            </div>
-            <div class="col-md-4 newone">
-              <div>
-                <img src="https://demo.ayroui.com/templates/business-template/assets/images/portfolio/pf3.jpg" alt="">        
-                <h3 class="h3_N1">
-                  App Development
-                </h3>
-                <p class="p_N7">
-                  Short description for the ones who look for something <br>
-                  new. Awesome!
-                </p>
-              </div>
-            </div>
-            <div class="col-md-4 newone">
-                <div>
-                <img src="https://demo.ayroui.com/templates/business-template/assets/images/portfolio/pf4.jpg" alt="">        
-                <h3 class="h3_N1" >
-                  Digital Marketing
-                </h3>
-                <p class="p_N7" >
-                  Short description for the ones who look for something <br>
-                  new. Awesome!
-                </p>
-                </div> 
-            </div>
-            <div class="col-md-4 newone">
-              <div>
-                <img src="https://demo.ayroui.com/templates/business-template/assets/images/portfolio/pf5.jpg" alt="">        
-                <h3 class="h3_N1" >
-                  SEO Services
-                </h3>
-                <p class="p_N8" >
-                  Short description for the ones who look for something <br>
-                  new. Awesome!
-                </p>
-              </div>            
-            </div>
-            <div class="col-md-4 newone">
-              <div>
-                <img src="https://demo.ayroui.com/templates/business-template/assets/images/portfolio/pf6.jpg" alt="">        
-                <h3 class="h3_N1" >
-                  Product Design
-                </h3>
-                <p class="p_N8" >
-                  Short description for the ones who look for something <br>
-                  new. Awesome!
-                </p>
-              </div>            
-            </div>                 
+            </div>     
+            {% endfor %}          
           </div>
         </div>
         
@@ -345,33 +287,21 @@
       <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <div class="container-fluid">
           <div class="row">
-
+                {% for portfolio in branding_portfolios %}
                 <div class="col-md-4 newone">
                   <div>
-                    <img  src="https://demo.ayroui.com/templates/business-template/assets/images/portfolio/pf1.jpg" alt="">        
+                    <img width="400px" src="{{portfolio.image.url}}" alt="">        
                     <h3 class="h3_N1" >
-                      Graphics Design
+                      {{portfolio.title}}
                     </h3>
                     <p class="p_N7" >
-                      Short description for the ones who look for something <br>
-                      new. Awesome!
+                      {{portfolio.description}}
+                      
                     </p>
                   </div>
                 </div>
-
-
-                <div class="col-md-4 newone">
-                  <div>
-                    <img src="https://demo.ayroui.com/templates/business-template/assets/images/portfolio/pf5.jpg" alt="">        
-                    <h3 class="h3_N1">
-                      SEO Services
-                    </h3>
-                    <p class="p_N8" >
-                      Short description for the ones who look for something <br>
-                      new. Awesome!
-                    </p>
-                  </div>            
-                </div>           
+                {% endfor %}
+          
 
           </div>
         </div>
@@ -528,63 +458,28 @@
 <div class="container">
 
   <div class="row">
-    
+    {% for member in team %}
     <!-- Team Member 1 -->
     <div class="col-md-4 ">
       <div class="team-style-six text-center">
         <div class="team-image">
-          <img  src="https://demo.ayroui.com/templates/business-template/assets/images/team/team-1.jpg" alt="">
+          <img  src="{{member.image.url}}" alt="">
         </div>
         <div class="team-content">
-          <h4 class="team-name">Jeffery Riley</h4>
-          <p  class="sub-title samirnasri_N2">Art Director</p>
+          <h4 class="team-name">{{member.full_name}}</h4>
+          <p  class="sub-title samirnasri_N2">{{member.profession}}</p>
           <div class="div_N9">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="{{member.facebook}}"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="{{member.twitter}}"><i class="fa-brands fa-twitter"></i></a>
+            <a href="{{member.linkedin}}"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="{{member.instagram}}"><i class="fa-brands fa-instagram"></i></a>
           </div>
         </div>
       </div>
     </div>
+    {% endfor %}
 
-    <!-- Team Member 2 -->
-    <div class="col-md-4 ">
-      <div class="team-style-six text-center">
-        <div class="team-image">
-          <img src="https://demo.ayroui.com/templates/business-template/assets/images/team/team-2.jpg" alt="">
-        </div>
-        <div class="team-content">
-          <h4 class="team-name">Emily Watson</h4>
-          <p class="sub-title samirnasri_N2">Marketing Lead</p>
-          <div class="div_N9">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Team Member 3 -->
-     <div class="col-md-4 ">
-      <div class="team-style-six text-center">
-        <div class="team-image">
-          <img  src="https://demo.ayroui.com/templates/business-template/assets/images/team/team-3.jpg" alt="">
-        </div>
-        <div class="team-content">
-          <h4 class="team-name">Mark Alone</h4>
-          <p  class="sub-title samirnasri_N2">UX Designer</p>
-          <div class="div_N9">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
 
   </div>

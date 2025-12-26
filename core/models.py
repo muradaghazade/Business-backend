@@ -22,11 +22,17 @@ class Promo_video(models.Model):
     def __str__(self):
         return self.description[:50]
     
+class Category(models.Model):
+    name = models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.name
+    
 class Portfolio(models.Model):
     title = models.CharField(max_length=150)
     description = models.TextField()
     image = models.ImageField(upload_to='portfolio/')
-    category = models.CharField(max_length=150)
+    category = models.ManyToManyField(Category, related_name='portfolios')
 
     def __str__(self):
         return self.title
